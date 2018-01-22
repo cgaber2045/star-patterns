@@ -125,9 +125,9 @@ class StarPatterns
         {
             for (int j=0; j<w; j++)
             {
-                if (i >= j) System.out.print("*");
+                if (i >= j && (j == 0 || j == i || i == h-1)) System.out.print("*");
                 else System.out.print(" ");
-                System.out.print(i + "" + j + " ");
+                //System.out.print(i + "" + j + " ");
             }
             System.out.println();
         }   
