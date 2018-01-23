@@ -9,9 +9,9 @@
  * @version [          ] <-- today
  */
 
-
 class StarPatterns 
 {
+    
     public static void starGrid(int h, int w)
     {           
         for (int i=0; i<h; i++)
@@ -184,14 +184,72 @@ class StarPatterns
         }   
     }
 
-    public static void biggerCheckerBoard(int w, int h)
+    public static void biggerCheckerBoard(int w, int h, int size)
     {
         for (int i=0; i<h; i++)
         {
             for (int j=0; j<w; j++)
             {
-                if ((i % 2 != 0 && j % 2 != 0) || (i % 2 == 0 && j % 2 == 0)){
+                if ((i/size % 2 != 0 && j/size % 2 != 0) || (i/size % 2 == 0 && j/size % 2 == 0)){
                     System.out.print("*");
+                }
+                else System.out.print(" ");
+                //System.out.print(i + "" + j + " ");
+            }
+            System.out.println();
+        }   
+    }
+    
+    public static void upsideDownCheckeredTriangle(int h)
+    {
+        int w = h*2 - 1;
+        int count = w/2;
+        
+        for (int i=0; i<h; i++)
+        {
+            for (int j=0; j<w; j++)
+            {
+                if ((j >= (w / 2) - count && j <= (w / 2) + count) && Math.abs(j-count) % 2 != 0){
+                    System.out.print("*");
+                }
+                else System.out.print(" ");
+                //System.out.print(i + "" + j + " ");
+            }
+            count -= 1;
+            System.out.println();
+        }   
+    }
+    
+    public static void fibbonacciStars(int h)
+    {
+        int w = 0;
+        
+        for (int i=0; i<h; i++)
+        {
+            for (int j=0; j<w; j++)
+            {
+                if (i==1){
+                    System.out.print("*");
+                }
+                else System.out.print(" ");
+                //System.out.print(i + "" + j + " ");
+            }
+            System.out.println();
+        }   
+    }
+    
+    public static void starFlag(int w, int h)
+    {
+
+        for (int i=0; i<h; i++)
+        {
+            for (int j=0; j<w; j++)
+            {
+                if (j <= 16 && i < 7){
+                    System.out.print("*");
+                }
+                else if ((j > 16 || i >= 6) && i % 2 == 0){
+                    System.out.print("R");
                 }
                 else System.out.print(" ");
                 //System.out.print(i + "" + j + " ");
@@ -235,7 +293,16 @@ class StarPatterns
         checkerBoard(8, 6);
         System.out.println();
         
-        biggerCheckerBoard(8, 6);
+        biggerCheckerBoard(30, 24, 3);
+        System.out.println();
+        
+        upsideDownCheckeredTriangle(6);
+        System.out.println();
+        
+        fibbonacciStars(8);
+        System.out.println();
+        
+        starFlag(37, 13);
         System.out.println();
     }
      
