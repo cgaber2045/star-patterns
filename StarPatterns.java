@@ -5,8 +5,8 @@
  * (Look in the StarInstructions.txt file to see what each method
  *  should draw.)
  *
- * @author  [          ] <-- you
- * @version [          ] <-- today
+ * @author  Chris Gaber <-- you
+ * @version 1/26/18 <-- today
  */
 
 class StarPatterns 
